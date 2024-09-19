@@ -30,6 +30,20 @@ const ContactTravelnWorld = require("../model/contact.travelnworld.js");
     }
 
 
+    exports.getRegisteredUser = async (req, res)=>{
+        try {
+    
+        const registeredUser = await RegisterTravelnWorld.findById(req?.params?.id);
+    
+        res.json(registeredUser);
+    
+        } catch (error) {
+        res.status(400).json(error);
+        }
+    
+        }
+
+
     exports.deleteRegisteredUser = async (req, res)=>{
     try {
 
@@ -74,6 +88,20 @@ const ContactTravelnWorld = require("../model/contact.travelnworld.js");
     }
 
 
+    exports.getQuoteUser = async (req, res)=>{
+        try {
+    
+        const quoteUser = await QuoteTravelnWorld.findById(req?.params?.id);
+    
+        res.json(quoteUser);
+    
+        } catch (error) {
+        res.status(400).json(error);
+        }
+    
+        }
+
+
     exports.deleteQuoteUser = async (req, res)=>{
     try {
 
@@ -115,6 +143,19 @@ const ContactTravelnWorld = require("../model/contact.travelnworld.js");
 
     }
 
+
+    exports.getContactUsUser = async (req, res)=>{
+        try {
+    
+        const ContactUser = await ContactTravelnWorld.findById(req.params?.id);
+    
+        res.json(ContactUser);
+    
+        } catch (error) {
+        res.status(400).json(error);
+        }
+    
+        }
 
     exports.deleteContactUsUser = async (req, res)=>{
     try {
