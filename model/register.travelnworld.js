@@ -7,6 +7,16 @@ const registerTravelnWorldSchema = new mongoose.Schema({
         type: String, required: [true, "Name is required"]
     },
 
+    businessName: {
+      type: String
+  },
+
+  phone: {
+    type: Number,
+    required: [true, "Phone number is required"],
+    min: [1, 'Enter a valid phone number'],
+  },
+
     email: {
         type: String,
         // unique: [true, "Email {VALUE} already exists"],
@@ -19,13 +29,11 @@ const registerTravelnWorldSchema = new mongoose.Schema({
         required: [true, "Email is required"]
       },
 
-      phone: {
-        type: Number,
-        required: [true, "Phone number is required"],
-        min: [1, 'Enter a valid phone number'],
+      location: {
+        type: String
       },
-
-     message: {
+      
+     yourRequirements: {
         type: String,
      }
   });
